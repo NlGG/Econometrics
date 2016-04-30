@@ -1,0 +1,71 @@
+本文で使用されたデータセットの概要
+
+第１章
+【CHAP1_DATA.XLS】
+入力内容
+OBS:企業の識別番号，CROA:当期経常利益/当期末資産 %，LOANRATIO:前期の（短期借入金＋１年内返済長期借入金＋長期借入金）/前期末資産 %，TOP10:前期末10大株主比率 %，BOND_MV2:当期社債発行額/前期末株式時価総額 %，LOGCAPLAR:前期の（有形固定資産額/従業員数）の対数値，DIDRATIO2:前期の（配当金総額/税引き後当年度利益）%，ZENTANPO:前期の（担保付借入金/資産），ROE2:前期の（税引き後当年度利益/株式時価総額），HAITOUKINHI2:前期の（自社１株当たり配当金/サンプル平均１株当たり配当金）
+
+第２章
+【mroz.raw】
+第２章注12で説明したホーム・ページ（www.estima.com）よりダウンロードできる．
+
+【HOUSE.TXT】
+入力内容
+pop:人口（千人），land:土地面積１（住宅地，平方キロ），land2:土地面積２（非住宅地），rent:１カ月当たり借家家賃（円），myhome:持ち家比率（%），income:１人当たり県民所得（千円）
+
+第３章
+【keane.dta】
+第３章注15で説明したホームページ（http://www.stata.com/data/jwooldridge/eacsap/）よりダウンロードできる．
+
+【nldata.asc】
+第３章注34で説明したホームページ（http://cameron.econ.ucdavis.edu/）よりダウンロードできる.
+
+【RANK.XLS】
+入力内容
+CROSSID:会社番号，DATEID:対象年，rank1:格付け，SM1:前期ソルベンシーマージン比率），LSAVE：前期総資産の対数値，KEIJO3：前期経常利益率，SEKIN2：責任準備金変化率，JUNSAVE：対責任準備金前期純資産額比率，KISO:対責任準備金前期基礎利益率，kok:国内10社0-1ダミー
+
+【keane.txt】
+本文141頁にあるEViewsプログラム（４行目）によって作成されたファイル．
+
+【seiho.txt】
+本文173頁にあるEViewsプログラム（５行目）によって作成されたファイル．
+
+第４章
+【mroz.txt】
+本文78頁にあるEViewsプログラム（２行目）によって作成されたファイル．
+
+第５章
+【tobacco.dat】
+Verbeek［2004］関係のホームページ（http://www.wileyeurope.com/go/verbeek2ed）からダウンロードできる．このホームページにまずアクセスし，Data Setsをクリックすると，データセットの一覧表が表示される．Chapter 7 Models with Limited Dependent Variablesのexpendituresをクリックし，表示されるzipファイルを保存すればよい．zipファイルの中に，tobacco.dat，tobacco.txt，tobacco.dtaのファイルがある．データセットはテキストファイル（tobacco.dat）とSTATA専用のフィル（tobacco.dta）がある．tobacco.txtには，データセットについての英語の説明がある．
+実は，tobacco.datの最初の２行には変数名が含まれ,欠損値は-999ではなく｢.｣として保存されるのでそのままLIMDEPでは読めない．LIMDEPで読めるテキストファイルを作成するために，本文141頁のEViewsプログラム1-4行のようなプログラムを実施すればよい．すなわち
+
+1 workfile c:\microexam\chap5\tobacco u 2724
+2 smpl 1 2724
+3 wfopen（type=stata）c:\microexam\chap5\tobacco.dta
+4 write（type=txt,nonames,na=-999）c:\microexam\chap5\tobacco.dat bluecol whitecol flanders walloon nkids nkids2 nadults lnx share2 share1 nadlnx agelnx age d1 d2 w1 w2 lnx2 age2
+
+４行目はVerbeekのホームページからダウンロードしたtobacco.datを上書きする．元のデータセットにはalcとtobはそれぞれd1とd2として名付けられている．
+
+【mroz.txt】
+本文78頁にあるEViewsプログラム（２行目）によって作成されたファイル．
+
+第７章
+【patents.wfl】
+本文343頁注８の説明のように，Verbeek［2004］関係のホームページ（http://www.wileyeurope.com/go/verbeek2ed）からダウンロードできる．このホームページをまずアクセスし，Data Setsをクリックすると，データセットの一覧表が表示される．Chapter 7 Models with Limited Dependent Variablesのpatents and R&Dをクリックし，表示されるzipファイルを保存すればよい．zipファイルの中に，patents.wflのファイルがある．EViewsのワークファイル以外に，STATA専用データファイル（patents.dta），テキストデータファイル（patents.dat）とデータセットについての英文説明（patents.txt）がある．
+
+【strk_asc.txt】
+第７章注21で説明したホームページ（http://www.econ.ucdavis.edu/faculty/cameron）よりダウンロードできる．第３章注34の説明を参照するとよい．ただし，strk.ascをクリックすると，中身がホームページより表示される．ホームページのファイルを選択し，名前を付けて保存を選び，保存場所を指定し，ファイルの種類をテキストファイルにすると，ファイルはstrk_asc.txtとして保存される．
+
+第８章
+【SEIHOQUASI.XLS】
+ファイルの中身はほとんど第３章のrank.xlsと同じである．変数名は
+CROSSID，year，attri，rank1，SM1，LSAVE，KEIJO3，SEKIN2，JUNSAVE，KISO，KOK
+rank.xlsに追加した変数はattriのみ．yearはrank.xlsのDATEIDと同じ．
+attriは0-1のダミーで1＝途中脱落または新規参入，0は一貫して存在．
+
+【wages.xls】
+本文435頁注69で説明した，http://www.wiley.co.uk/baltagiからダウンロードできる．このホームページからData setsをクリックすると，データセットの一覧表が表示される．Panel Data, 595 individuals over 7 years, 1976-1982をクリックすると，wages.xlsをダウンロードウインドウが表示される．
+
+第９章
+【VV-DATA.DAT】
+本文454頁注９で説明した，http://www.econ.queensu.ca/jae/1998-v13.2/よりダウンロードできる．ホームページが表示されたら，Vella-Verbeekをクリックする．vv-data.zipの中にvv-data.datがある．
