@@ -5,5 +5,5 @@
 
 [ミクロ計量経済学 松浦克己/コリン・マッケンジー](Matsuura_and_McKrnzie)  
 
-## [空間統計・空間計量](/NlGG/SpatialStatistics)
+#### [空間統計・空間計量](https://github.com/NlGG/SpatialStatistics)
 
