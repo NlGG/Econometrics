@@ -3,7 +3,7 @@
 
 ##勉強会日程  
 6/10 第1章 時系列分析の基礎概念、第2章 ARMA過程  
-noteboo  
+notebook   
 6/17 第3章 予測  
 notebook  
 6/24 第4章 VARモデル  
